@@ -1,0 +1,198 @@
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+body {
+    overflow: hidden;
+}
+#top {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 39px;
+    opacity: 0.9;
+    border-bottom: 1px solid rgb(164, 171, 170);
+    background-color: rgb(220, 220, 220);
+    font-size:13px; color:#555;
+    font-family: "黑体";
+    text-align: center;
+    display:block;
+}
+#top button {
+    height: 23px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(164, 171, 170);
+    margin-top: 7px;   
+    margin-bottom: 7px;
+    cursor: pointer;
+    vertical-align: center;
+}
+#route {
+    margin-left: 80px;
+    width: 100px;    
+    background-color: rgb(240, 240, 240);
+    color: #000;
+}
+#location {
+    width: 38px;
+    background: url(../icon/location.png) no-repeat -2px -2px;
+    background-repeat: no-repeat;
+    margin-right: 6px;  
+}
+#share {
+    width: 38px;
+    background: url(../icon/share.png) no-repeat -2px -3px;
+    background-repeat: no-repeat;
+    margin-left: 6px;
+}
+#tipinput {
+    width: 500px;
+    height: 27px;
+    line-height: 23px;
+    border: 1px solid rgb(164, 171, 170);
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    margin-top: 9px;
+    vertical-align: top;
+}
+#map {
+    width: 50px;
+    margin-right: -4px;
+    background-color: rgb(95, 95, 95);
+    color: #FFF;
+}
+#bus {
+    width: 50px;
+    margin-right: -4px;
+    background-color: rgb(240, 240, 240);
+}
+#satellite {
+    width: 50px;
+    margin-right: 10px;
+    background-color: rgb(240, 240, 240);
+}
+#searchPanel {
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    overflow-y: auto;
+    top: 40px;
+    left: 0px;
+    width: 280px;
+    height: 100%;
+    opacity: 0.9;
+    display:none;
+}
+#routePanel {
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    overflow-y: auto;
+    top: 40px;
+    left: 0px;
+    width: 280px;
+    height: 100%;
+    opacity: 0.9;
+    display:none;
+    border-right: 1px solid rgb(164, 171, 170);
+    padding:10px 0;
+    font-size:13px; color:#555;
+}
+#routePanel input{
+    margin:2px;
+}
+#search {
+    display: block; 
+}
+#search, .switch{
+    padding-left:20px;
+}
+.switch{
+    clear: left;
+    display: block;
+    left:0;
+    text-align: center;
+    width:100%;
+    height:30px;
+    padding:10px 0; 
+    margin:0;
+}
+.switch li{
+    display: inline-block; 
+    float:left;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 80px;
+    padding: 4px 0;
+    font-family: "黑体";
+    cursor:pointer;
+}
+.switch li:first-child{
+    border-right:none;
+}
+.switch li:last-child{
+    border-left:none;
+}
+#result{
+    border-top:1px solid rgb(164, 171, 170);
+    height: 100%;
+    overflow-y: hidden;
+}
+#result div{
+    border-top:none;
+    text-align: center;
+}
+#exchange{
+    height:50px;
+    margin-left:5px; padding:0 3px;
+    background-color: #ccc;
+    border-radius: 5px 5px;
+    color:#fff; font-size:17px;
+    font-weight: bold;
+    border:none;
+    cursor: pointer;
+}
+#exchange:hover{
+    background-color: #ccf; color:#fff;
+}
+
+
+.marker {
+    width:22px;
+    height:36px;
+    background-image:url('http://webapi.amap.com/theme/v1.3/markers/b/mark_b.png');
+    background-size: 22px 36px;
+    text-align: center;
+    line-height: 24px;
+    color: #FFF
+}
+
+.amap_lib_placeSearch {
+    /*text-align: center;*/
+}
+/* 搜索页码 */
+.amap_lib_placeSearch_page {
+    display: none;
+}
+/* 搜索面板的详情 */
+.amap_lib_placeSearch .poibox .poi-more {
+    display: none;
+}
+
+/* 信息窗体 */
+.amap-lib-infowindow-title a {
+    display: none;
+}
+.blue {
+    display: none;
+}
+/*.amap-info-sharp {
+    /*background: url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) no-repeat -5px -564px;*/
+}
+.amap-combo-sharp {
+    /*background-image: url(./sharp.png);*/
+    /*background: url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) no-repeat -5px -564px;*/
+}*/
