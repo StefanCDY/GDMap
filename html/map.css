@@ -1,11 +1,31 @@
+body {
+    overflow: hidden;
+}
 .fl {
     float: left;
 }
 .fr {
     float: right;
 }
-body {
-    overflow: hidden;
+#btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+#btn button {
+    width: 28px;
+    height: 20px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgb(164, 171, 170);
+    cursor: pointer;
+    vertical-align: center;
+    font-family: "黑体";
+    font-size: 12px;
+    color: black;
+    padding-top: 0px;
 }
 #top {
     position: absolute;
@@ -24,30 +44,38 @@ body {
 #top button {
     height: 23px;
     text-align: center;
-    border-radius: 5px;
-    border: 1px solid rgb(164, 171, 170);
     margin-top: 7px;   
     margin-bottom: 7px;
     cursor: pointer;
     vertical-align: center;
+    font-family: "黑体";
+    font-size: 12px;
+    padding-top: 0px;
+    font-weight: bold;
 }
 #route {
     margin-left: 80px;
     width: 100px;    
     background-color: rgb(240, 240, 240);
     color: #000;
+    border-radius: 5px;
+    border: 1px solid rgb(164, 171, 170);
 }
 #location {
     width: 38px;
     background: url(../icon/location.png) no-repeat -2px -2px;
     background-repeat: no-repeat;
     margin-right: 6px;  
+    border-radius: 5px;
+    border: 1px solid rgb(164, 171, 170);
 }
 #share {
     width: 38px;
     background: url(../icon/share.png) no-repeat -2px -3px;
     background-repeat: no-repeat;
     margin-left: 6px;
+    border-radius: 5px;
+    border: 1px solid rgb(164, 171, 170);
 }
 #tipinput {
     width: 500px;
@@ -58,22 +86,30 @@ body {
     border-radius: 5px;
     margin-top: 9px;
     vertical-align: top;
+    text-align: center;
 }
 #map {
     width: 50px;
-    margin-right: -4px;
+    margin-right: -2px;
     background-color: rgb(95, 95, 95);
     color: #FFF;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 #bus {
     width: 50px;
-    margin-right: -4px;
+    margin-right: -2px;
     background-color: rgb(240, 240, 240);
+    border: none;
 }
 #satellite {
     width: 50px;
     margin-right: 10px;
     background-color: rgb(240, 240, 240);
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 #searchPanel {
     position: absolute;
@@ -86,10 +122,10 @@ body {
     opacity: 0.9;
     display:none;
 }
+
 #routePanel {
     position: absolute;
     background-color: rgb(240, 240, 240);
-    overflow-y: auto;
     top: 40px;
     left: 0px;
     width: 280px;
@@ -98,13 +134,20 @@ body {
     display:none;
     border-right: 1px solid rgb(164, 171, 170);
     padding:10px 0;
-    font-size:13px; color:#555;
+    font-size:13px; 
+    color:#555;
+    overflow-y: hidden;
+}
+#result{
+    height: 100%;
+    overflow-y: auto;
 }
 #routePanel input{
     margin:2px;
 }
 #search {
     display: block; 
+    border-bottom:1px solid rgb(164, 171, 170);
 }
 #search, .switch{
     padding-left:20px;
@@ -136,15 +179,6 @@ body {
 .switch li:last-child{
     border-left:none;
 }
-#result{
-    border-top:1px solid rgb(164, 171, 170);
-    height: 100%;
-    overflow-y: hidden;
-}
-#result div{
-    border-top:none;
-    text-align: center;
-}
 #exchange{
     height:50px;
     margin-left:5px; padding:0 3px;
@@ -159,7 +193,6 @@ body {
     background-color: #ccf; color:#fff;
 }
 
-
 .marker {
     width:22px;
     height:36px;
@@ -170,9 +203,6 @@ body {
     color: #FFF
 }
 
-.amap_lib_placeSearch {
-    /*text-align: center;*/
-}
 /* 搜索页码 */
 .amap_lib_placeSearch_page {
     display: none;
@@ -189,10 +219,11 @@ body {
 .blue {
     display: none;
 }
-/*.amap-info-sharp {
-    /*background: url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) no-repeat -5px -564px;*/
+
+/* 隐藏logo和copyright */
+.amap-logo {
+    display: none;
 }
-.amap-combo-sharp {
-    /*background-image: url(./sharp.png);*/
-    /*background: url(http://webapi.amap.com/theme/v1.3/images/amap-info.png) no-repeat -5px -564px;*/
-}*/
+.amap-copyright {
+    visibility: hidden;
+}

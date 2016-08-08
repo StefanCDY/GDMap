@@ -1,66 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-  <title>高德地图展示</title>
-  <!-- <link rel="stylesheet" type="text/css" href="map.css"> -->
-  <link rel="stylesheet" type="text/css" href="newmap.css">
-  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
-  <!-- <link rel="stylesheet" href="http://cache.amap.com/lbs/static/AMap.PlaceSearchRender1120.css"/> -->
-  <!-- <link rel="stylesheet" href="http://cache.amap.com/lbs/static/AMap.DrivingRender1120.css"/> -->
-  <script src="http://webapi.amap.com/maps?v=1.3&key=1e08359e26d38cd419d1bfe557871ae9"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<title>Stefan-GDMap</title>
+	<link rel="stylesheet" type="text/css" href="map.css">
+	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+	<script src="http://webapi.amap.com/maps?v=1.3&key=1e08359e26d38cd419d1bfe557871ae9"></script>
 </head>
 <body>
-  <div id="container"></div>
-  <div id="top">
-    <div class="fl">
-     <button id="route" title="切换路线选项" onclick="showRoutePanel()">路线</button>
-   </div>
-   <button id="location" title="显示当前的位置" onclick="relocation()"></button>
-   <input id="tipinput" type="search" title="若要搜索，请输入一个地点或地址" style="text-align: center;" placeholder="搜索地点或地址" oninput="handle()" onkeydown="isEnter()" onfocus="this.style.textAlign = 'left';" onblur="this.style.textAlign = 'center';"/>
-   <button id="share"></button>
-   <div class="fr">
-     <button id="map" title="显示经典地图" onclick="showDefaultMap()">地图</button>
-     <button id="bus" title="显示交通地图" onclick="showBusMap()">交通</button>
-     <button id="satellite" title="显示卫星地图" onclick="showSatelliteMap()">卫星</button>
-   </div>
- </div>
- <div id="searchPanel"></div>
- <div id="routePanel">
-   <div id="search">
-    <div class="fl">
-      起点:<input id="start" type="search" oninput="setStatus(this)"/><br/>
-      终点:<input id="end" type="search" oninput="setStatus(this)"/><br/>
-    </div>
-    <div class="fl">
-      <button id="exchange" onclick="exchange()">&uarr;&darr;</button>
-    </div>
-    <ul class="switch">
-      <li id="driving" title="搜索驾车路线" onclick="showDriveline()">驾车</li>
-      <li id="walking" title="搜索步行路线" onclick="showWalkline()">步行</li>
-      <li id="transfing" title="搜索公交路线" onclick="showTransferline()">公交</li>
-    </ul>  
-  </div>
-  <div id="result">	
-    <div id="drive"></div>
-    <div id="walk"></div>
-    <div id="transfer"></div>
-  </div>
-</div>
-<div id="btn">
-  <button id="zoomIn" onclick="zoomIn()">+</button>
-  <button id="zoomOut" onclick="zoomOut()">—</button>
-</div>
-<!-- <div class='button-group' style="background-color: #0d9bf2;right: 125px">
-    <input type="button" onclick="search()"/>查询
-    <input type="button" onclick="addMarker()"/>addMarker
-    <input type="button" onclick="putPin()"/>全选文本框
-  </div> -->
+	<div id="container"></div>
+	<div id="top">
+		<div class="fl">
+			<button id="route" title="切换路线选项" onclick="showRoutePanel()">路线</button>
+		</div>
+		<button id="location" title="显示当前的位置" onclick="relocation()"></button>
+		<input type="search" id="tipinput" placeholder="搜索地点或地址" title="若要搜索，请输入一个地点或地址" onfocus="tipfocus(this)" onblur="tipblur(this)" oninput="tipinput(this)" onkeydown="tipkeydown(this)"/>
+		<button id="share" title="确认搜索" onclick="clickSearch()"></button>
+		<div class="fr">
+			<button id="map" title="显示经典地图" onclick="showDefaultMap()">地图</button>
+			<button id="bus" title="显示交通地图" onclick="showBusMap()">交通</button>
+			<button id="satellite" title="显示卫星地图" onclick="showSatelliteMap()">卫星</button>
+		</div>
+	</div>
+	<div id="searchPanel"></div>
+	<div id="routePanel">
+		<div id="search">
+			<div class="fl">
+				起点:<input type="search" id="start" oninput="setStyle(this)"><br/>
+				终点:<input type="search" id="end" oninput="setStyle(this)"><br/>
+			</div>
+			<div class="fl">
+				<button id="exchange" onclick="exchange()">&uarr;&darr;</button>
+			</div>
+			<ul class="switch">
+				<li id="driving" title="搜索驾车路线" onclick="showDriveline()">驾车</li>
+				<li id="walking" title="搜索步行路线" onclick="showWalkline()">步行</li>
+				<li id="transfing" title="搜索公交路线" onclick="showTransferline()">公交</li>
+			</ul>
+		</div>
+		<div id="result"></div>
+	</div>
+	<div id="btn">
+		<button id="zoomIn" onclick="zoomIn()">＋</button>
+		<button id="zoomOut" onclick="zoomOut()">－</button>
+	</div>
 </body>
-<script type="text/javascript" src="newfunction.js"></script>
-<script type="text/javascript" src="newmap.js"></script>
-<!-- <script type="text/javascript" src="function.js"></script> -->
-<!-- <script type="text/javascript" src="map.js"></script> -->
+<script type="text/javascript" src="function.js"></script>
+<script type="text/javascript" src="map.js"></script>
 </html>
