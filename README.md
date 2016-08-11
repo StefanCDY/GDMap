@@ -4,10 +4,10 @@
 
 * Author : Stefan
 
-* Starting time : 2016-07-25
+* Starting-Time : 2016-07-25
 
-* Program entrance : 'MainWindows.java'
+* Program-Entrance : 'MainWindows.java'
 
 * It's a Map-Desktop-Application of Mac
 
-* Using the AMap JS-API and SWT/JFace
+* Using the JS-API of AMap and SWT/JFace
